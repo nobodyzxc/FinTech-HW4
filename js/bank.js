@@ -7,8 +7,7 @@ let bankAbi = [
       {
         "name": "etherValue",
         "type": "uint256"
-      }
-    ],
+      } ],
     "name": "withdraw",
     "outputs": [],
     "payable": false,
