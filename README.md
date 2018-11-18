@@ -2,4 +2,4 @@
 
 小組成員在 member.txt 中
 
-block comment file 分別是 comment.js, comment.solidity
+block comment file 分別是 comment.js, comment.sol
