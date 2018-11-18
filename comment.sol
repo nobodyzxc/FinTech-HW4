@@ -21,10 +21,10 @@ function purchaseCD(uint256 periods) public payable {
 
 
 /*
-terminateCD這個函數用來執行提前終止定存合約。首先以require規定msg.sender的帳戶餘額不為零，否則會警告該定存帳戶不存在。
-之後以require要求提前解約的期數要小於等於之前買的期數，避免其實msg.sender宣稱是提前解約，其實已超過時間。
-之後用delete清空msg.sender購買定存的紀錄。之後的msg.sender.transfer便是把定存本金轉到msg.sender的帳戶中。
-最後再以emit告知外界提前終止定存
+terminateCD這個函數用來執行提前終止定存合約。首先以require規定msg.sender的帳戶餘額不為零，否則會警告該
+定存帳戶不存在。之後以require要求提前解約的期數要小於等於之前買的期數，避免其實msg.sender宣稱是提前解約，
+其實已超過時間。然後把msg.sender的本金和本金加利息分別存到value和withProfit中。之後用delete清空msg.sender
+購買定存的紀錄。之後的msg.sender.transfer便是把定存本金轉到msg.sender的帳戶中。最後再以emit告知外界提前終止定存
 */
 
 // 提前中止定存合約
@@ -51,7 +51,9 @@ function terminateCD(uint256 periods) public {
 
 /*
 completeCD用以執行定存期滿的結算。同樣以require要求定存帳戶餘額不為零，然後分別將該定存戶的
-本金、期數、本金加利息存到value、periods、withProfit裡。再以emit告知外界定存期滿。
+本金、期數、本金加利息存到value、periods、withProfit裡。之後用delete清空msg.sender
+購買定存的紀錄。之後的msg.sender.transfer便是把定存本金轉到msg.sender的帳戶中。再以
+emit告知外界定存期滿。
 */
 
 // 定存期滿
