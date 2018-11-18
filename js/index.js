@@ -281,6 +281,7 @@ withdrawButton.on("click", async function() {
     })
     .on("error", function(error) {
       alert(error.toString());
+      alert("(錢不夠提?)" );
       log("(錢不夠提?)" + error.toString());
       // 更新介面
       doneTransactionStatus();
@@ -367,6 +368,8 @@ purchaseCDButton.on("click", async function() {
       doneTransactionStatus();
     })
     .on("error", function(error) {
+      alert(error.toString());
+      alert("(先前定存已存在?)");
       log(error.toString() + "(先前定存已存在)");
       // 更新介面
       doneTransactionStatus();
@@ -407,6 +410,8 @@ completeCDButton.on("click", async function() {
       doneTransactionStatus();
     })
     .on("error", function(error) {
+      alert(error.toString());
+      alert("(定存不存在?)");
       log(error.toString() + "(定存不存在)");
       // 更新介面
       doneTransactionStatus();
@@ -447,6 +452,8 @@ terminateCDButton.on("click", async function() {
       doneTransactionStatus();
     })
     .on("error", function(error) {
+      alert(error.toString());
+      alert("(定存不存在或期數超過?)");
       log(error.toString() + "(定存不存在或期數超過)");
       // 更新介面
       doneTransactionStatus();
@@ -526,7 +533,7 @@ async function unlockAccount() {
     return web3.eth.personal
       .unlockAccount(nowAccount, password, 60)
       .then(function(result) {
-        alert("密碼正確" + String(result));
+        alert("密碼正確");
         return true;
       })
       .catch(function(err) {
