@@ -1,5 +1,7 @@
 /*
-comment here
+guard 這個函數可以用來確保輸入是否正確。
+如果val_string移除字串前後的空白字元以及行結束字元後為空白，則會呼叫alert()，讓執行停下來，並提醒使用者輸入val_string。
+如果val_string輸入的字串轉成整數後小於0，則會呼叫alert()，讓執行停下來，並提醒使用者輸入val_string的值需要大於0。
 */
 
 function guard(name, val_string){
