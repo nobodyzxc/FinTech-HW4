@@ -15,7 +15,8 @@ function guard(name, val_string){
 }
 
 /*
-comment here
+按下執行購買定存後，先檢查Bank Address、定存金額、期數是否符合規定。
+接著會unlock本地賬戶並呼叫purchaseCD函數購買定存。交易結束後會更新賬戶資料並顯示交易成功或失敗。
 */
 
 // 當按下購買定存按鍵時
@@ -65,7 +66,8 @@ purchaseCDButton.on("click", async function() {
 });
 
 /*
-comment here
+按下執行合約期滿後，會檢查Bank Address並unlock本地賬戶。
+接著呼叫completeCD函數執行定存期滿的結算，更新界面顯示定存返還成功或失敗。
 */
 
 // 當按下期滿按鍵時
@@ -106,7 +108,8 @@ completeCDButton.on("click", async function() {
 });
 
 /*
-comment here
+按下執行提前解約後，會檢查Bank Address並unlock本地賬戶。
+接著呼叫terminateCD函數執行提前終止定存合約，更新界面顯示定存返還成功或失敗。
 */
 
 
